@@ -1,0 +1,6 @@
+{
+  "src/**/*.{js,jsx,ts,tsx,less,scss,css}": "prettier --write",
+  "src/**/*.{js,jsx}": "eslint --fix",
+  "src/**/*.less": "stylelint --fix --syntax less",
+  "package.json": "sort-package-json"
+}

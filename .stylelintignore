@@ -1,0 +1,15 @@
+# dependencies
+/node_modules
+
+# production
+/dist
+/public
+/build
+
+# misc
+.DS_Store
+
+# ide
+.idea
+.vscode
+.history
