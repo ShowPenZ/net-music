@@ -1,17 +1,16 @@
 {
-    "compilerOptions": {
-      "noLib": false,
-      "checkJs": false,
-      "allowJs": true,
-      "experimentalDecorators": true,
-      "allowSyntheticDefaultImports": true,
-      "baseUrl": ".",
-      "strict": true,
-      "paths": {
-        "@/*": ["src/*"]
-      }
-    },
-    "include": ["src/**/*"],
-    "exclude": ["node_modules", "**/node_modules/*", "dist", "bower_components", "tmp", "temp", "jspm_packages"]
-  }
-  
+  "compilerOptions": {
+    "noLib": false,
+    "checkJs": false,
+    "allowJs": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "strict": true,
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "**/node_modules/*", "dist", "bower_components", "tmp", "temp", "jspm_packages"]
+}

@@ -1,9 +1,9 @@
 import _ from 'lodash';
 import Axios from 'axios';
 import QueryString from 'qs';
-import { Toast } from 'antd-mobile';
+import { message } from 'antd';
 import { ReqError } from './error';
-import { getLocale, mergeObject, hasPlainObject, hasString, rsaEncrypt } from './helper';
+import { mergeObject, hasPlainObject, hasString } from './helper';
 
 // export const addFingerPrintToHeader = () => ({ Uuid: getFingerPrint() });
 // export const addAuthorization = () => ({ Authorization: rsaEncrypt(getToken()) });
@@ -20,7 +20,7 @@ export const defaultRequestOptions = {
   dataInConfig: true,
   errorAction: null,
   cancelToken: c => {},
-  extraHeader: { Device: 'H5' },
+  extraHeader: {},
 };
 
 export function mergeRequestOptions(...args) {
@@ -96,9 +96,9 @@ function handleRequestData(data, options = {}) {
     data.t = _.now();
   }
 
-  if (options.addLocale) {
-    data.lang = getLocale(true);
-  }
+  // if (options.addLocale) {
+  //   data.lang = getLocale(true);
+  // }
 
   if (options.tokenInData) {
     // data.token = getToken();
@@ -151,8 +151,8 @@ function handleRequest(req, options = {}) {
     }
 
     if (_.get(resp, 'data.code') !== 0) {
-      Toast.fail(resp.data.msg, 3);
-
+      // Toast.fail(resp.data.msg, 3);
+      message.error(resp.data.msg, 3);
       return Promise.reject(
         new ReqError('srvCode', {
           request: req,
@@ -213,9 +213,9 @@ export function postJson(url, data, options = {}) {
 
   const extra = {
     extraHeader: {
-    //   addFingerPrintToHeader,
-    //   'User-Language': getLanguage(),
-    //   addAuthorization,
+      //   addFingerPrintToHeader,
+      //   'User-Language': getLanguage(),
+      //   addAuthorization,
     },
     dataInConfig: false,
   };
